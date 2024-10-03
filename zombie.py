@@ -3,6 +3,6 @@ class Zombies:
         self.health = health
         
         
-    def attackingBase(self):
+    def attacking_base(self):
         print(f"A zombie swarm moves towards the base - Horde health: {self.health}")
         
