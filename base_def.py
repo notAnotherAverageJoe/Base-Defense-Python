@@ -1,5 +1,6 @@
 from turrets import Turrets
 from shield import Shield
+from zombie import Zombies
 
 
 class BaseDef(Turrets,Shield):
