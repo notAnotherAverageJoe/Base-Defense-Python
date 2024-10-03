@@ -1,6 +1,7 @@
 import random as rand
-from base_def import BaseDef
+from base_def import BaseDef, combat_zombie_swarm
 from zombie import Zombies
+
 
 # Initialize the game state
 alive = True
@@ -10,6 +11,7 @@ def check_for_zombie_spawn():
     spawn_zombies= rand.randint(1,10)
     if spawn_zombies % 2 == 0:
         zombie_swarm.attacking_base()
+        combat_zombie_swarm(zombie_swarm, main_base)
     else:
         print("No zombies around! You are safe for now...")
         
@@ -34,7 +36,7 @@ while alive:
             print(f"{main_base.name}'s shields have been recharged!")
             check_for_zombie_spawn()
             
-        
+            
         case 3:
             print("Exiting the game. Stay safe!")
             alive = False

@@ -1,6 +1,7 @@
 from turrets import Turrets
 from shield import Shield
 from zombie import Zombies
+import random as rand
 
 
 class BaseDef(Turrets,Shield):
@@ -13,15 +14,43 @@ class BaseDef(Turrets,Shield):
     def base_status(self):
         try:
             print(f"Base Defense Health: {self.base_defense}")
-            main_base.shooting()
-            main_base.powered()
-            main_base.shield_strength()
+            print(f"Turret Ammo: {self.ammo}")
+            print(f"Base Shield Strength: {self.shields}")
+          
         except AttributeError as err:
             print(f"issues arose with base status {err}")
         
 
         
-        
-main_base = BaseDef("Iron Side", 125, 100, 100, 150, 120, 10)
 
-main_base.base_status()
+def combat_zombie_swarm(zombie, base):
+    
+    zombie_swarm_hp = zombie.health  # Health of the attacking zombies
+
+    while base.ammo > 0 and zombie_swarm_hp > 0:
+        defensive_fire = rand.randint(1, 20)  # This value could represent the damage dealt
+        print(f"Zombies are here!\nCurrent Ammo: {base.ammo}\nZombie Swarm Health: {zombie_swarm_hp}")
+
+        # Simulate firing at the zombie swarm
+        damage = defensive_fire
+        zombie_swarm_hp -= damage  # Reduce the zombie health by the damage dealt
+        base.ammo -= 1  # Deduct 1 ammo directly from the base object
+
+        print(f"You fired and dealt {damage} damage to the zombies!")
+        print(f"Remaining Zombie Swarm Health: {zombie_swarm_hp}")
+
+        # Check ammo status
+        if base.ammo == 0:
+            print("No ammo remains.")
+            print("Shields will take damage for this.")
+            base.shields -= 50  # Reduce shield strength directly from the base
+            break
+
+    if zombie_swarm_hp <= 0:
+        print("You survived this wave!")
+    else:
+        print("The zombies overwhelmed your base!")
+
+        
+    
+    
