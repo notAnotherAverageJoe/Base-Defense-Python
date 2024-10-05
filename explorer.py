@@ -1,4 +1,15 @@
 class Explorer:
-    def __init__(self, squad_hp, successRate, carryCapacity, name):
-        self.squad_hp = squad_hp
+    def __init__(self, squad_hp, success_rate, carry_capacity, squad_name):
+        self.squad_hp = squad_hp  
+        self.success_rate = success_rate  
+        self.carry_capacity = carry_capacity  
+        self.squad_name = squad_name  
         
+    def exploration(self):
+        print(f"{self.squad_name} is heading out on an expedition")
+        
+    def squad_details(self):
+        print(f"Squad name: {self.squad_name}")
+        print(f"Squad health: {self.squad_hp}")
+        print(f"Success Rate: {self.success_rate}")
+        print(f"Carry Capacity: {self.carry_capacity}")
