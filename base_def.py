@@ -44,6 +44,7 @@ def combat_zombie_swarm(zombie, base):
             print("No ammo remains.")
             print("Shields will take damage for this.")
             base.shields -= 50  # Reduce shield strength directly from the base
+            print(f"Shield Health: {base.shields}")
             break
 
     if zombie_swarm_hp <= 0:
