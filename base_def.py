@@ -2,12 +2,16 @@ from turrets import Turrets
 from shield import Shield
 from zombie import Zombies
 import random as rand
+from explorer import Explorer
 
 
 class BaseDef(Turrets,Shield):
-    def __init__(self, name, health, ammo, power, base_defense,shields,recharge_rate):
+    def __init__(self, name, health, ammo, power, base_defense,
+                 shields,recharge_rate, squad_hp, success_rate, carry_capacity,
+                 squad_name, squad_level):
         Turrets.__init__(self, health, ammo, power)  # Call the parent class constructor
         Shield.__init__(self, shields, recharge_rate) # Calling second parent constructor
+        Explorer.__init__(self, squad_hp, success_rate, carry_capacity, squad_name, squad_level )
         self.base_defense = base_defense  # Add new attribute for Base
         self.name = name
         

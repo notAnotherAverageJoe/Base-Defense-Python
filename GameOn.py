@@ -1,6 +1,7 @@
 import random as rand
 from base_def import BaseDef, combat_zombie_swarm
 from zombie import Zombies
+from explorer import Explorer
 
 
 # Initialize the game state
