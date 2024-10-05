@@ -10,7 +10,7 @@ class Explorer:
         print(f"{self.squad_name} is heading out on an expedition")
         
     def squad_details(self):
-        print(f"Squad name: {self.squad_name}")
+        print(f"\n\nSquad name: {self.squad_name}")
         print(f"Squad health: {self.squad_hp}")
         print(f"Success Rate: {self.success_rate}")
         print(f"Carry Capacity: {self.carry_capacity}")

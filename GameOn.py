@@ -23,7 +23,11 @@ main_base = BaseDef(name=base_name, health=125, ammo=100, power=100, base_defens
 
 while alive:
     print("\nPrepare for the next attack")
-    choices = int(input("\n\n1. Check base status\n2. Recharge shields\n3. Exit\nChoose an option: \n\n\n"))
+    print("\n\n1. Check base status")
+    print("2. Recharge shields")
+    print("3. Send Out Explorers")
+    print("4. Exit")
+    choices = int(input("Choose an option: \n\n\n"))
     
     match choices:
         case 1:
@@ -37,8 +41,14 @@ while alive:
             print(f"{main_base.name}'s shields have been recharged!")
             check_for_zombie_spawn()
             
-            
         case 3:
+            print("Create a squad of survivors")
+            name = input("Choose a name for your Squad! --> ")
+            main_squad = Explorer(squad_hp=100,success_rate=50, carry_capacity=50, squad_name=name, squad_level=1)
+            main_squad.squad_details()
+            
+            
+        case 4:
             print("Exiting the game. Stay safe!")
             alive = False
         
